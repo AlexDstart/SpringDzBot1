@@ -45,5 +45,5 @@ public interface EmployeeService {
 
         ResponseEntity<ByteArrayResource> getReportResponseById(Long id);
 
-    }
+}
 
