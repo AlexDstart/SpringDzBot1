@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - include:
+      file: liquibase/changesets/23062023_create_department.yml
+  - include:
+      file: liquibase/changesets/23062023_create_position.yml
+  - include:
+      file: liquibase/changesets/23062023_create_employee.yml
+  - include:
+      file: liquibase/changesets/23062023_create_report.yml

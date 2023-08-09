@@ -1,0 +1,50 @@
+databaseChangeLog:
+  - changeSet:
+      id: createEmployeeTable
+      author: VVS
+      changes:
+        - tagDatabase:
+            tag: 1.0
+        - createTable:
+            tableName: employee
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(100)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: salary
+                  type: integer
+                  constraints:
+                    nullable: true
+              - column:
+                  name: position_id
+                  type: integer
+                  constraints:
+                    nullable: true
+              - column:
+                  name: department_id
+                  type: integer
+                  constraints:
+                    nullable: true
+            constraints:
+              - foreignKey:
+                  baseTableName: employee
+                  baseColumnNames: department_id
+                  referencedTableName: department
+                  referencedColumnNames: id
+                  constraintName: employee_department_id_fk
+              - foreignKey:
+                  baseTableName: employee
+                  baseColumnNames: position_id
+                  referencedTableName: position
+                  referencedColumnNames: id
+                  constraintName: employee_position_id_fkey

@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - changeSet:
+      id: createReportTable
+      author: VVS
+      changes:
+        - tagDatabase:
+            tag: 1.0
+        - createTable:
+            tableName: report
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: file_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: content
+                  type: text
+                  constraints:
+                    nullable: true
